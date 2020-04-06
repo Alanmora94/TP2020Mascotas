@@ -9,13 +9,6 @@ import { Mascota } from './clases/mascota';
 export class AppComponent {
   title = 'Mascotas';
 
-  lista: Array<Mascota> = [];
 
-  public GrabarMascota (e:Mascota){
-
-    this.lista.push(e);
-    console.log(e);
-
-  }
 
 }

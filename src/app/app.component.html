@@ -1,13 +1,4 @@
 <h1>App de Mascotas</h1><br>
 
 
-<div *ngFor="let x of lista; index as i">
-   <h5>{{ x.nombre }}</h5> 
-   <img src="data:image/png;base64,{{ x.imagen }}" style="width: 400px; height: 330px;">
-   <h5>{{ x.tipo }}</h5>
-</div>
-
-
-<app-carga-mascota
-(agregar)="GrabarMascota($event)"
-></app-carga-mascota>   
+<app-carga-mascota></app-carga-mascota>   

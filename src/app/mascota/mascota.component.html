@@ -1,1 +1,11 @@
 <p>mascota works!</p>
+
+<div *ngIf="mascota != null">
+
+    <h5>{{ mascota.nombre }}</h5> 
+    <img src="data:image/png;base64,{{ mascota.imagen }}" style="width: 400px; height: 330px;">
+    <h5>{{ mascota.tipo }}</h5>
+
+</div>
+   
+    

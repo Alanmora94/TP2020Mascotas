@@ -1,1 +1,16 @@
-<p>listado works!</p>
+<p>listado de mascotas</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div *ngFor="let x of lista; index as i">
+                <h5>{{ x.nombre }}</h5> 
+                <button type="button" (click)="Detalle(x)" class="btn btn-outline-primary btn-blok">Detalle</button>
+                
+            </div>
+        </div>    
+    </div>
+</div>
+
+ <app-mascota [mascota]="mascota"></app-mascota>
+ 

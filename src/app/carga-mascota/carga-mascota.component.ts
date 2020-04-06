@@ -7,17 +7,33 @@ import { Mascota } from '../clases/mascota';
   styleUrls: ['./carga-mascota.component.css']
 })
 export class CargaMascotaComponent implements OnInit {
-  @Output()
-  agregar = new EventEmitter<Mascota>();
+  //@Output()
+  //agregar = new EventEmitter<Mascota>();
   
-  
+  lista: Array<Mascota> = [];
   Atributos : any = {nombre:"",imagen:"sin",tipo:""};
-  mascota : Mascota;
-  
+    
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  
+
+  public GrabarMascota (){
+
+    this.lista.push(new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo));
+    //console.log(e);
+
+  }
+
+  /*public GrabarMascota (){
+
+    this.lista.push(e);
+    console.log(e);
+
+  }*/
 
 
   SeleccionarImg(event){
@@ -40,13 +56,13 @@ export class CargaMascotaComponent implements OnInit {
 
   }
 
-  cargar(){
+  //cargar(){
 
-    this.mascota = new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo);
-    this.mascota.mostrar();
+    //this.mascota = new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo);
+    //this.mascota.mostrar();
     //this.agregar.emit(this.mascota.nombre);
-    this.agregar.emit(this.mascota);
-  }
+    //this.agregar.emit(this.mascota);
+ // }
 
 
 
