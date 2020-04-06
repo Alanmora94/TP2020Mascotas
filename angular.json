@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Mascotas": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Mascotas"
+    }
+  },
+  "defaultProject": "Mascotas",
+  "cli": {
+    "analytics": "18e1a7b6-b5bc-43a7-a313-73e8c3d513c9"
+  }
 }
