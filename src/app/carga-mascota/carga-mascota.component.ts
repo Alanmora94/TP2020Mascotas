@@ -13,8 +13,7 @@ export class CargaMascotaComponent implements OnInit {
   
   Atributos : any = {nombre:"",imagen:"sin",tipo:""};
   mascota : Mascota;
-  imagen : any = "sin";
-
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -30,7 +29,7 @@ export class CargaMascotaComponent implements OnInit {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.imagen = reader.result.toString().split(',')[1];
+        this.Atributos.imagen = reader.result.toString().split(',')[1];
         console.log(file.name);
         console.log(file.type);
         console.log(reader.result.toString().split(',')[1]);

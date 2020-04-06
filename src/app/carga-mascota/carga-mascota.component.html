@@ -6,8 +6,8 @@
             <input type="text" [(ngModel)]="Atributos.nombre" class="form-control">
           </div>
           <div class="form-group">
-            <label for="usr">Imagen</label>
-            <input type="text" [(ngModel)]="imagen" class="form-control">
+            <label for="usr">Imagen: </label><br>
+            <input type="file" id="imagen" (change)="SeleccionarImg($event)" #fileInput>
           </div>
           <div class="form-group">
             <div class="form-group">
@@ -24,12 +24,7 @@
               <button type="button" (click)="cargar()" class="btn btn-outline-primary btn-blok">Evento angular</button>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col">
-              <input type="file" id="avatar" (change)="SeleccionarImg($event)" #fileInput>
-            </div>
-          </div>
-       
+    
         </div>
     </div>
 
