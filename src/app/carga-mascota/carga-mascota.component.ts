@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Mascota } from '../clases/mascota';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-carga-mascota',
@@ -9,11 +11,13 @@ import { Mascota } from '../clases/mascota';
 export class CargaMascotaComponent implements OnInit {
   //@Output()
   //agregar = new EventEmitter<Mascota>();
-  
+  constructor(private toastr: ToastrService) {}
+
+
   lista: Array<Mascota> = [];
   Atributos : any = {nombre:"",imagen:"sin",tipo:""};
     
-  constructor() { }
+  
 
   ngOnInit(): void {
   }
@@ -24,7 +28,24 @@ export class CargaMascotaComponent implements OnInit {
   public GrabarMascota (){
 
     this.lista.push(new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo));
+    
     //console.log(e);
+    switch(this.Atributos.tipo) { 
+      case "Perro": { 
+        this.toastr.success('El Perro ha sido agregado!');
+         break; 
+      } 
+      case "Gato": { 
+        this.toastr.error('El Gato ha sido agregado!');
+         break; 
+      } 
+      case "Pez": { 
+        this.toastr.info('El Pez ha sido agregado!');
+        break; 
+     } 
+   } 
+
+
 
   }
 
