@@ -12,7 +12,10 @@ export class ListadoComponent implements OnInit {
 
   mascota : Mascota;
 
-  constructor() { }
+  constructor() { 
+
+    console.log(this.lista);
+  }
 
   ngOnInit(): void {
   }

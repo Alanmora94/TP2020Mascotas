@@ -1,0 +1,12 @@
+
+
+.scru {
+    height: 300px;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.borde{
+border-top: 6px solid #0000cc;
+}

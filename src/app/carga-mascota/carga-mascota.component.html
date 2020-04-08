@@ -1,43 +1,53 @@
 <div class="container">
+  <h3 class="text-primary">Ingresar datos </h3><br>
     <div class="row">
-        <div class="col-6">
+        <div class="col align-self-start">
           <div class="form-group">
             <label for="usr">Nombre</label>
             <input type="text" [(ngModel)]="Atributos.nombre" class="form-control">
           </div>
+
+
           <div class="form-group">
-            <label for="usr">Imagen: </label><br>
-            <input type="file" id="imagen" (change)="SeleccionarImg($event)" #fileInput>
-          </div>
+                <label for="usr">Imagen: </label><br>
+                <input type="file" id="imagen" (change)="SeleccionarImg($event)" #fileInput>
+          </div>  
+
+
           <div class="form-group">
-            <div class="form-group">
               <label for="usr">Tipo</label>
               <select class="form-control" [(ngModel)]="Atributos.tipo" id="SelectTipo">
                 <option>Perro</option>
                 <option>Gato</option>
                 <option>Pez</option>
               </select>
-            </div>
           </div>
           <div class="form-row">
             <div class="col">
-              <button type="button" (click)="GrabarMascota()" class="btn btn-outline-primary btn-blok">Evento angular</button>
+              <button type="button" (click)="GrabarMascota()" class="btn btn-outline-primary btn-blok">Grabar mascota</button>
             </div>
           </div>
-    
         </div>
+        <div class="col align-self-center">
+          <div *ngIf="Atributos.imagen != 'sin'"> 
+            <div class="card" style="width: 18rem;">
+              <img src="data:image/png;base64,{{ Atributos.imagen }}"  class="rounded" class="card-img-top" alt="...">
+            </div>        
+          </div>  
+        </div>
+
     </div>
 
-  <div *ngIf="Atributos.imagen != 'sin'">
-    <div class="form-group">
-      <div class="row">
-          <div class="col-12">
-              <img src="data:image/png;base64,{{ Atributos.imagen }}" style="width: 600px; height: 530px;">
-          </div>
+    <div class="row">
+      <div class="col align-self-center">
+        <app-listado [lista]="lista"></app-listado>
       </div>
     </div>
-   </div>
-
+   
   </div>
   
-  <app-listado [lista]="lista"></app-listado>
+  
+
+
+
+
