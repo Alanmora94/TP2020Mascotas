@@ -11,29 +11,38 @@ import { ToastrService } from 'ngx-toastr';
 export class CargaMascotaComponent implements OnInit {
   //@Output()
   //agregar = new EventEmitter<Mascota>();
-  constructor(private toastr: ToastrService) {}
-
 
   lista: Array<Mascota> = [];
   Atributos : any = {nombre:"",imagen:"",tipo:""};
   formulario :HTMLFormElement;  
-  
+
+  constructor(private toastr: ToastrService) {
+
+    if (localStorage.length > 0){
+
+      for (let i = 0; i < localStorage.length; i++) {
+        
+        if (localStorage.key(i) == "lista"){
+
+          this.lista = JSON.parse(localStorage.getItem("lista"));
+        }   
+        
+      }
+    }
+
+  }
+
 
   ngOnInit(): void {
   }
 
-
-  
-
   public GrabarMascota (){
-
     
     this.lista.push(new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo));
     localStorage.setItem("lista", JSON.stringify(this.lista));
     this.formulario = <HTMLFormElement>document.getElementById("carga");
     this.formulario.reset();
     this.Atributos.imagen="";
-    //console.log(e);
     switch(this.Atributos.tipo) { 
       case "Perro": { 
         this.toastr.success('El Perro ha sido agregado!');

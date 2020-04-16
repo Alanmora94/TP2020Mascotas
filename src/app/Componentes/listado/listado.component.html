@@ -1,11 +1,8 @@
-<br>
-
-
 <div *ngIf="lista.length > 0" >
-    <div class="container" class="borde">
+    <div class="container">
         <div class="row" ><br>
           <div class="col">
-            <h3>Listado</h3>
+            <h3 class="text-primary">Listado de Mascotas </h3><br>
             <br>
             <app-mascota [id]="mascotaSeleccionada"
             (mostrarMascota)="MostrarMascota($event)"

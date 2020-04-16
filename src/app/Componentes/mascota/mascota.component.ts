@@ -15,13 +15,9 @@ export class MascotaComponent implements OnInit {
   @Input() 
   public set id (id : number){
 	
-    //this._id=id;
     this.lista = JSON.parse(localStorage.getItem("lista"));
-    //console.log(this.lista[id]);
-    //this.mostrarMascota.emit(this.lista[this.id]);
     this.mostrarMascota.emit(this.lista[id]);
-    //console.log("entro");
-  }
+    }
 
   constructor() { }
 

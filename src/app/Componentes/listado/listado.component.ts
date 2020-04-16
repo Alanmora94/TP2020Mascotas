@@ -8,8 +8,6 @@ import { Mascota } from '../../clases/mascota';
 })
 export class ListadoComponent implements OnInit {
 
-  //@Input() lista: Array<Mascota>;
-
   lista: Array<Mascota> = JSON.parse(localStorage.getItem("lista"));
   mascota : Mascota;
   mascotaSeleccionada : any;
@@ -21,14 +19,10 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*Mostrar (event){
-    console.log(event);
-  }*/
-
+ 
   MostrarMascota(event){
 
     console.log(event);
-    //console.log("entro en mostrar mascota")
     this.mascota = event;
 
   }
