@@ -13,12 +13,14 @@ export class MascotaComponent implements OnInit {
 
   @Output() mostrarMascota = new EventEmitter<any>();
   @Input() 
-  public set id (id : any){
+  public set id (id : number){
 	
-    this._id=id;
+    //this._id=id;
     this.lista = JSON.parse(localStorage.getItem("lista"));
-    this.mostrarMascota.emit(this.lista[this.id]);
-    console.log("entro");
+    //console.log(this.lista[id]);
+    //this.mostrarMascota.emit(this.lista[this.id]);
+    this.mostrarMascota.emit(this.lista[id]);
+    //console.log("entro");
   }
 
   constructor() { }

@@ -17,7 +17,7 @@
                   <h5>Detalle</h5>
                 </nav><br>
               <div class="card" style="width: 18rem;">
-                  <img src="data:image/png;base64,{{ mascota.imagen }}" class="card-img-top" alt="...">
+                  <img [src]= "mascota.imagen" class="card-img-top" alt="...">
                   <div class="card-body">
                        <h6>Nombre: {{ mascota.nombre }}</h6>
                        <h6>Tipo:   {{ mascota.tipo }}</h6>

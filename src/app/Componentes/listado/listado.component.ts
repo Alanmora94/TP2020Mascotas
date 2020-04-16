@@ -28,7 +28,7 @@ export class ListadoComponent implements OnInit {
   MostrarMascota(event){
 
     console.log(event);
-    console.log("entro en mostrar mascota")
+    //console.log("entro en mostrar mascota")
     this.mascota = event;
 
   }
