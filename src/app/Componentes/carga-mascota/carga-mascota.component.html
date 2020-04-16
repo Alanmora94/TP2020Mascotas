@@ -1,0 +1,58 @@
+<div class="container">
+    <h3 class="text-primary">Ingresar datos </h3><br>
+      <div class="row" >
+          <div class="col align-self-start">
+
+            <form id="carga">
+
+              <div class="form-group">
+                <label for="usr">Nombre</label>
+                <input type="text" [(ngModel)]="Atributos.nombre" name="nombre" class="form-control" placeholder="ingrese el nombre">
+              </div>
+          
+          
+              <div class="form-group">
+                    <label for="usr">Imagen URL: </label><br>
+                    <!--<input type="file" id="imagen" (change)="SeleccionarImg($event)" #fileInput>-->
+                    <input type="text" [(ngModel)]="Atributos.imagen" name="imagen" id="imagen" placeholder="ingrese la url">
+              </div>  
+          
+          
+              <div class="form-group">
+                  <label for="usr">Tipo</label>
+                  <select class="form-control" [(ngModel)]="Atributos.tipo" name="tipo" id="SelectTipo">
+                    <option selected disabled>seleccione el tipo:</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Pez</option>
+                  </select>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <button type="button" (click)="GrabarMascota()" class="btn btn-outline-primary btn-blok">Grabar mascota</button>
+                </div>
+              </div>
+              
+            </form>
+
+
+          </div>
+          <div class="col align-self-center">
+            <div *ngIf="Atributos.imagen != ''"> 
+              <div class="card" style="width: 18rem;">
+                <!--<img src="data:image/png;base64,{{ Atributos.imagen }}"  class="rounded" class="card-img-top" alt="...">-->
+                <img [src]="Atributos.imagen"  class="rounded" class="card-img-top" alt="...">
+              </div>        
+            </div>  
+          </div>
+  
+      </div>
+  
+      </div>
+    
+    
+  
+  
+  
+  
+  

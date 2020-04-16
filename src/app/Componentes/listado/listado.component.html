@@ -7,7 +7,25 @@
           <div class="col">
             <h3>Listado</h3>
             <br>
-            <app-mascota [mascota]="mascota"></app-mascota>
+            <app-mascota [id]="mascotaSeleccionada"
+            (mostrarMascota)="MostrarMascota($event)"
+            ></app-mascota>
+            <div *ngIf="mascota != null">
+
+    
+              <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                  <h5>Detalle</h5>
+                </nav><br>
+              <div class="card" style="width: 18rem;">
+                  <img src="data:image/png;base64,{{ mascota.imagen }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                       <h6>Nombre: {{ mascota.nombre }}</h6>
+                       <h6>Tipo:   {{ mascota.tipo }}</h6>
+                      
+                  </div>
+                </div>
+          
+          </div>
           </div>
           <div class="col">           
                 <div class="list-group" class="scru">
@@ -30,7 +48,7 @@
                                         
                                     </div>
                                     <div class="col-sm">
-                                        <button type="button" (click)="Detalle(x)" class="btn btn-light">Detalle</button>
+                                        <button type="button" (click)="Detalle(i)" class="btn btn-light">Detalle</button>
                                     </div>
                                 </div>
                             </div>

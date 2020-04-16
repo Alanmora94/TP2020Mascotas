@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Mascota } from '../clases/mascota';
+import { Mascota } from '../../clases/mascota';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -15,8 +15,8 @@ export class CargaMascotaComponent implements OnInit {
 
 
   lista: Array<Mascota> = [];
-  Atributos : any = {nombre:"",imagen:"sin",tipo:""};
-    
+  Atributos : any = {nombre:"",imagen:"",tipo:""};
+  formulario :HTMLFormElement;  
   
 
   ngOnInit(): void {
@@ -27,8 +27,12 @@ export class CargaMascotaComponent implements OnInit {
 
   public GrabarMascota (){
 
-    this.lista.push(new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo));
     
+    this.lista.push(new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo));
+    localStorage.setItem("lista", JSON.stringify(this.lista));
+    this.formulario = <HTMLFormElement>document.getElementById("carga");
+    this.formulario.reset();
+    this.Atributos.imagen="";
     //console.log(e);
     switch(this.Atributos.tipo) { 
       case "Perro": { 
@@ -57,7 +61,7 @@ export class CargaMascotaComponent implements OnInit {
   }*/
 
 
-  SeleccionarImg(event){
+  /*SeleccionarImg(event){
 
     console.log('llego a evento imagen');
     let reader = new FileReader();
@@ -75,15 +79,15 @@ export class CargaMascotaComponent implements OnInit {
       };
     }
 
-  }
+  }*/
 
-  //cargar(){
+  /*cargar(){
 
-    //this.mascota = new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo);
-    //this.mascota.mostrar();
-    //this.agregar.emit(this.mascota.nombre);
-    //this.agregar.emit(this.mascota);
- // }
+    this.mascota = new Mascota(this.Atributos.nombre,this.Atributos.imagen,this.Atributos.tipo);
+    this.mascota.mostrar();
+    this.agregar.emit(this.mascota.nombre);
+    this.agregar.emit(this.mascota);
+  }*/
 
 
 
